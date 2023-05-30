@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_nav_graph"
+    app:startDestination="@id/dest8LoginFragment">
+    <fragment
+        android:id="@+id/dest8LoginFragment"
+        android:name="com.example.jetpack_demos.navigation.Dest8LoginFragment"
+        android:label="Dest8LoginFragment">
+        <!--
+            app:popUpToSaveState="true"
+            app:popUpToInclusive="false"
+            app:restoreState="true"
+        -->
+        <action
+            android:id="@+id/loginToRegister"
+            app:destination="@+id/dest9RegisterFragment" />
+        <!--app:popUpToInclusive="true"-->
+    </fragment>
+    <fragment
+        android:id="@+id/dest9RegisterFragment"
+        android:name="com.example.jetpack_demos.navigation.Dest9RegisterFragment"
+        android:label="Dest9RegisterFragment" />
+</navigation>

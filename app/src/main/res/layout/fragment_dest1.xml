@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".navigation.Dest1Fragment">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtWithParam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="带有参数的导航" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航到dialog" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航到activity" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtActivityWithParam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航到activity带参数" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtActivityWithIntent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航到隐式Intent的activity" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtActivityWithIntentAndData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航到隐式Intent带参数的activity" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全局导航到登录界面" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航到嵌套的login导航图的另一个目的地" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtProgram1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编程方式打开普通导航" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtProgram2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编程方式打开隐式DeepLink" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtProgram3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编程方式打开显示DeepLink" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtNestedGraphDest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跳转到嵌套导航中的目的地" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtModuleDest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跳转到依赖模块中的目的地" />
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/caidog"
+                android:transitionName="imageView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtConditionDest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="条件导航" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtAnimalDest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航动画" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtShareElementInFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fragment共享元素，过渡动画" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtShareElementInActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="avtivity共享元素，过渡动画" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.SplashScreen.Start" parent="Base">
+        <!--品牌图片-->
+        <item name="android:windowSplashScreenBrandingImage">@drawable/brand</item>
+        <!--设置应用启动屏是否展示icon-->
+        <item name="android:windowSplashScreenBehavior">icon_preferred</item>
+    </style>
+</resources>

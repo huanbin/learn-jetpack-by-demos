@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dest1Fragment">
+    <!--定义参数-->
+    <!--<argument/>-->
+    <!--定义动作，导航-->
+    <!--<action/>-->
+    <!--定义deeplink,导航-->
+    <!--<deepLink/>-->
+    <fragment
+        android:id="@+id/dest1Fragment"
+        android:name="com.example.jetpack_demos.navigation.Dest1Fragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_dest1">
+        <action
+            android:id="@+id/mainToDest2"
+            app:destination="@id/dest2Fragment">
+            <!--String类型参数-->
+            <argument
+                android:name="title"
+                android:defaultValue="default title content"
+                app:argType="string" />
+            <!--Int类型参数-->
+            <argument
+                android:name="number"
+                android:defaultValue="0"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/mainToDialog"
+            app:destination="@+id/dest3Dialog">
+            <argument
+                android:name="myarg"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/mainToDest10"
+            app:destination="@id/dest10Fragment" />
+        <!--跳转activity不需要-->
+        <!--<action
+            android:id="@+id/mainToActivity"
+            app:destination="@id/dest4Activity" />-->
+        <!--嵌套导航中的目的地，报错-->
+        <action
+            android:id="@+id/mainToRegister"
+            app:destination="@+id/dest9RegisterFragment" />
+        <!--依赖模块中的目的地，报错-->
+        <action
+            android:id="@+id/mainToBlank"
+            app:destination="@+id/blankFragment" />
+        <action
+            android:id="@+id/mainToDest11"
+            app:destination="@+id/dest11Fragment" />
+        <action
+            android:id="@+id/mainToDest13"
+            app:destination="@id/dest13AnimalFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/mainToDest14"
+            app:destination="@id/dest14Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dest2Fragment"
+        android:name="com.example.jetpack_demos.navigation.Dest2Fragment"
+        android:label="fragment_dest2"
+        tools:layout="@layout/fragment_dest2">
+        <argument
+            android:name="title"
+            android:defaultValue="default title content"
+            app:argType="string" />
+        <argument
+            android:name="number"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <dialog
+        android:id="@+id/dest3Dialog"
+        android:name="com.example.jetpack_demos.navigation.Dest3DialogFragment">
+        <argument
+            android:name="myarg"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/myaction"
+            app:destination="@+id/dest1Fragment" />
+    </dialog>
+    <!--activity目的地-->
+    <activity
+        android:id="@+id/dest4Activity"
+        android:name="com.example.jetpack_demos.navigation.Dest4Activity"
+        android:label="activity_dest4"
+        tools:layout="@layout/activity_dest4" />
+    <activity
+        android:id="@+id/dest5ParamActivity"
+        android:name="com.example.jetpack_demos.navigation.Dest5ParamActivity"
+        android:label="activity_dest5_param"
+        tools:layout="@layout/activity_dest5_param">
+        <argument
+            android:name="param1"
+            app:argType="string" />
+        <argument
+            android:name="price"
+            app:argType="float" />
+    </activity>
+    <!--targetPackage不进可以是当前application id，还可以是另一个app 的application id-->
+    <activity
+        android:id="@+id/dest6Activity"
+        android:name="com.example.jetpack_demos.navigation.Dest6Activity"
+        android:label="Dest6Activity"
+        app:data="hb://com.demo"
+        app:targetPackage="com.example.jetpack_demos" />
+    <!--dataPattern传递动态参数-->
+    <!--app:targetPackage="com.example.android.another.app"-->
+    <activity
+        android:id="@+id/dest7Activity"
+        android:name="com.example.jetpack_demos.navigation.Dest7Activity"
+        android:label="Dest7Activity"
+        app:dataPattern="hb://com.demo?userId={userId}"
+        app:targetPackage="com.example.jetpack_demos">
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </activity>
+    <!--全局动作，当一个目的地有多个路线时，使用全局动作替代-->
+    <!--<action
+        android:id="@+id/login"
+        app:destination="@+id/navigation_login">-->
+    <!--当使用include时-->
+    <action
+        android:id="@+id/login"
+        app:destination="@+id/login_nav_graph">
+        <!--可传递参数-->
+    </action>
+    <!--比如从首页到登录，再从登录到注册成功之后，返回首页-->
+    <action
+        android:id="@+id/main"
+        app:popUpTo="@+id/dest1Fragment"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/main4"
+        app:destination="@+id/dest1Fragment"
+        app:popUpTo="@+id/dest1Fragment"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/main2"
+        app:destination="@+id/dest1Fragment"
+        app:popUpTo="@+id/dest1Fragment"
+        app:popUpToInclusive="true" />
+    <!--<action
+        android:id="@+id/main2"
+        app:destination="@+id/dest1Fragment"
+        app:popUpTo="@+id/login"
+        app:popUpToInclusive="true" />-->
+    <action
+        android:id="@+id/main3"
+        app:destination="@+id/dest1Fragment"
+        app:popUpTo="@+id/dest8LoginFragment"
+        app:popUpToInclusive="false" />
+
+    <!--不管怎么样dest1Fragment总是重建吗？？？-->
+    <!--
+    popUpToSaveState和restoreState之所以没有效果，是因为用错了时机。
+    在进行某个action操作之前（从当前页面导航走之前），必须先触发保存行为，然后进行导航到目的地，之后再进行某个action之前再触发恢复操作，然后进行导航。
+    -->
+    <action
+        android:id="@+id/main5"
+        app:popUpTo="@+id/dest1Fragment"
+        app:popUpToInclusive="false"
+        app:popUpToSaveState="true" />
+
+    <fragment
+        android:id="@+id/dest10Fragment"
+        android:name="com.example.jetpack_demos.navigation.Dest10Fragment"
+        android:label="Dest10Fragment">
+
+        <!--这里定义参数，deeplink访问时，可以在url中传递参数-->
+        <argument
+            android:name="dogName"
+            app:argType="string"
+            app:nullable="false" />
+        <!-- android:defaultValue="xiaohei"-->
+
+        <!-- deepLink app:uri="https://com.deeplink.demo?dogName={dogName}" app:action="android.intent.action.MY_ACTION" />-->
+        <!--开始APP外怎么都没法找到，注意这里其实默认的生成是带有path="/",可以观察Manifest文件中替换<nav-graph>标签生成的intent-filter是如何配置的-->
+        <!--<deepLink
+            app:action="android.intent.action.MY_ACTION"
+            app:uri="hb://com.deeplink.demo/my?dogName={dogName}" />-->
+        <!--
+            在配置deeplink时一定要配置path，app内部跳转deeplink没有问题，但是对于第三方跳转deeplink时发现2个坑：
+            1.没有配置deeplink path时，在第三方App中使用intent访问时，intent的data属性uri必须添加/，否则无法匹配deeplink，根本没法打开App
+            2.没有配置deeplink path时，完成上述1中的步骤（添加/）,只能跳转到首页，无法跳转到具体的deeplink目的地。
+        -->
+        <deepLink
+            app:action="android.intent.action.MY_ACTION"
+            app:uri="hb://com.deeplink.demo/my?dogName={dogName}" />
+    </fragment>
+    <!--抽取到login_nav_graph中封装起来了-->
+    <!--<navigation
+        android:id="@+id/navigation_login"
+        app:startDestination="@id/dest8LoginFragment">
+        <fragment
+            android:id="@+id/dest8LoginFragment"
+            android:name="com.example.jetpack_demos.navigation.Dest8LoginFragment"
+            android:label="Dest8LoginFragment">
+            &lt;!&ndash;
+                app:popUpToSaveState="true"
+                app:popUpToInclusive="false"
+                app:restoreState="true"
+            &ndash;&gt;
+            <action
+                android:id="@+id/loginToRegister"
+                app:destination="@+id/dest9RegisterFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/dest9RegisterFragment"
+            android:name="com.example.jetpack_demos.navigation.Dest9RegisterFragment"
+            android:label="Dest9RegisterFragment" />
+    </navigation>-->
+    <!--嵌套导航-->
+    <include app:graph="@navigation/login_nav_graph" />
+    <include app:graph="@navigation/demo_module_navgraph" />
+    <fragment
+        android:id="@+id/dest11Fragment"
+        android:name="com.example.jetpack_demos.navigation.Dest11Fragment"
+        android:label="Dest11Fragment">
+        <argument
+            android:name="isForceLogin"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/dest11ToDest12Selection"
+            app:destination="@+id/dest12SelectionFragment">
+            <argument
+                android:name="isForceLogin"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/dest12SelectionFragment"
+        android:name="com.example.jetpack_demos.navigation.Dest12SelectionFragment"
+        android:label="Dest12SelectionFragment">
+
+        <argument
+            android:name="isForceLogin"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/loginSuccessToDest11"
+            app:destination="@id/dest11Fragment"
+            app:popUpTo="@id/dest11Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dest13AnimalFragment"
+        android:name="com.example.jetpack_demos.navigation.Dest13AnimalFragment"
+        android:label="Dest13AnimalFragment" />
+    <fragment
+        android:id="@+id/dest14Fragment"
+        android:name="com.example.jetpack_demos.navigation.Dest14Fragment"
+        android:label="Dest14Fragment" />
+    <activity
+        android:id="@+id/dest15ShareElementAnimalActivity"
+        android:name="com.example.jetpack_demos.navigation.Dest15ShareElementAnimalActivity"
+        android:label="activity_dest15_share_element_animal"
+        tools:layout="@layout/activity_dest15_share_element_animal" />
+    <fragment
+        android:id="@+id/dest16HandleBackEventFragment"
+        android:name="com.example.jetpack_demos.navigation.Dest16HandleBackEventFragment"
+        android:label="fragment_dest15_handle_back_event"
+        tools:layout="@layout/fragment_dest16_handle_back_event" />
+</navigation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.jetpack_demos.viewmodel.StudentViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etStudentId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入查询的学生id信息"
+            android:text="@{viewmodel.studentId}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="insertStudent"
+            android:text="添加学生" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="updateStudentById"
+            android:text="更新学生信息" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

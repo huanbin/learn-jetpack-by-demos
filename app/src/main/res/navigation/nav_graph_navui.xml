@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_navui"
+    app:startDestination="@id/navUITopAppBarFragment">
+
+    <fragment
+        android:id="@+id/navUITopAppBarFragment"
+        android:name="com.example.jetpack_demos.navigation.navui.NavUITopAppBarFragment"
+        android:label="Home Page Title" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.jetpack_demos.navigation.navui.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.jetpack_demos.navigation.navui.AddFragment"
+        android:label="AddFragment"/>
+</navigation>

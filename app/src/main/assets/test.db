@@ -1,0 +1,10 @@
+--
+-- 由SQLiteStudio v3.1.1 产生的文件 周三 3月 8 13:47:17 2023
+--
+-- 文本编码：System
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;

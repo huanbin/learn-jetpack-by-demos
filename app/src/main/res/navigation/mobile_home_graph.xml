@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation_graph"
+    app:startDestination="@+id/navigation_home">
+    <!--
+        @+id定义id资源，xml解析器会解析生成id资源并添加到R.java文件中
+        @id引用R.java文件中id资源（当前App的id资源）
+    -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.jetpack_demos.navigation.multistack.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/homeToSecond"
+            app:destination="@id/homeSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeSecondFragment"
+        android:name="com.example.jetpack_demos.navigation.multistack.ui.home.HomeSecondFragment"
+        android:label="@string/fragment_home_second"
+        tools:layout="@layout/fragment_home_second">
+
+        <argument
+            android:name="sex"
+            app:argType="integer"
+            app:nullable="false" />
+
+        <!--隐式deeplink-->
+        <!--            app:action=""-->
+        <!--            app:mimeType=""-->
+        <!--            android:autoVerify="false"-->
+        <deepLink app:uri="http://hb.com/user/1?tag={tag}&amp;sex={sex}&amp;user={user}" />
+    </fragment>
+</navigation>

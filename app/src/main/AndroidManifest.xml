@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- 在Android8.0上，google模拟器不需要这些权限 -->
+    <!-- 添加快捷方式，荣耀手机需要这个权限，否则在app设置中没有创建快捷的权限管理 -->
+    <uses-permission android:name="android.permission.INSTALL_SHORTCUT" /> <!-- 移除快捷方式 -->
+    <uses-permission android:name="android.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--enableOnBackInvokedCallback 启用 predictive back gesture-->
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App"
+        tools:targetApi="31">
+        <activity
+            android:name="com.example.jetpack_demos.datastore.Migration2DataStoreActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.jetpack_demos.datastore.ThreeDataStoreActivity"
+            android:exported="true">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.example.jetpack_demos.draganddrop.DragAndDropActivity"
+            android:exported="true">
+            <!-- <intent-filter>
+                     <action android:name="android.intent.action.MAIN" />
+
+                     <category android:name="android.intent.category.LAUNCHER" />
+                 </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.hilt.HiltDemo2Activity"
+            android:exported="true"></activity>
+
+        <activity
+            android:name=".hilt.LoginMainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.jetpack_demos.view.text.TextStyleDemo1Activity"
+            android:exported="true">
+            <!--<intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.blur.BlurDemo3Activity"
+            android:exported="true">
+            <!--<intent-filter>
+                                <action android:name="android.intent.action.MAIN" />
+
+                                <category android:name="android.intent.category.LAUNCHER" />
+                            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.blur.BlurDemo2Activity"
+            android:exported="true">
+            <!--<intent-filter>
+                                <action android:name="android.intent.action.MAIN" />
+
+                                <category android:name="android.intent.category.LAUNCHER" />
+                            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.blur.BlurDemo1Activity"
+            android:exported="true">
+            <!-- <intent-filter>
+                                <action android:name="android.intent.action.MAIN" />
+
+                                <category android:name="android.intent.category.LAUNCHER" />
+                            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.hilt.HiltDemo1Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDeme13Activity"
+            android:exported="true">
+            <!--<intent-filter>
+                                    <action android:name="android.intent.action.MAIN" />
+
+                                    <category android:name="android.intent.category.LAUNCHER" />
+                                </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDeme12Activity"
+            android:exported="true">
+            <!--<intent-filter>
+                                        <action android:name="android.intent.action.MAIN" />
+
+                                        <category android:name="android.intent.category.LAUNCHER" />
+                                    </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDeme11Activity"
+            android:exported="true">
+            <!--<intent-filter>
+                                        <action android:name="android.intent.action.MAIN" />
+
+                                        <category android:name="android.intent.category.LAUNCHER" />
+                                    </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDeme10Activity"
+            android:exported="true">
+            <!--  <intent-filter>
+                                          <action android:name="android.intent.action.MAIN" />
+
+                                          <category android:name="android.intent.category.LAUNCHER" />
+                                      </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDemo9RecycleViewActivity"
+            android:exported="true">
+            <!--<intent-filter>
+                                        <action android:name="android.intent.action.MAIN" />
+
+                                        <category android:name="android.intent.category.LAUNCHER" />
+                                    </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDemo8PostponeActivity"
+            android:exported="true">
+            <!--<intent-filter>
+                                            <action android:name="android.intent.action.MAIN" />
+
+                                            <category android:name="android.intent.category.LAUNCHER" />
+                                        </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDemo7TransitionShareElementActivity"
+            android:exported="true">
+            <!-- <intent-filter>
+                                            <action android:name="android.intent.action.MAIN" />
+
+                                            <category android:name="android.intent.category.LAUNCHER" />
+                                        </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDemo6TransitionActivity"
+            android:exported="true">
+            <!--<intent-filter>
+                                            <action android:name="android.intent.action.MAIN" />
+
+                                            <category android:name="android.intent.category.LAUNCHER" />
+                                        </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDemo5AnimalActivity"
+            android:exported="true">
+            <!-- <intent-filter>
+                                             <action android:name="android.intent.action.MAIN" />
+
+                                             <category android:name="android.intent.category.LAUNCHER" />
+                                         </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDemo4Activity"
+            android:exported="true">
+            <!--intent-filter>
+                                                <action android:name="android.intent.action.MAIN" />
+
+                                                <category android:name="android.intent.category.LAUNCHER" />
+                                            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.example.jetpack_demos.fragments.FragmentDemo2Activity"
+            android:exported="false" />
+
+        <!-- <activity
+                                             android:name="com.example.jetpack_demos.fragments.FragmentDemo1Activity"
+                                             android:exported="true">
+                                             <intent-filter>
+                                                 <action android:name="android.intent.action.MAIN" />
+
+                                                 <category android:name="android.intent.category.LAUNCHER" />
+                                             </intent-filter>
+                                         </activity>-->
+
+        <activity
+            android:name=".navigation.dsl.NavDSLActivity"
+            android:exported="true">
+            <!-- <intent-filter>
+                                                 <action android:name="android.intent.action.MAIN" />
+
+                                                 <category android:name="android.intent.category.LAUNCHER" />
+                                             </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".navigation.navui.NavUiToolbarActivity"
+            android:exported="true">
+
+            <!--
+                                            <intent-filter>
+                                                <action android:name="android.intent.action.MAIN" />
+
+                                                <category android:name="android.intent.category.LAUNCHER" />
+                                            </intent-filter>
+                                            -->
+        </activity>
+        <activity
+            android:name=".navigation.Dest15ShareElementAnimalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".navigation.multistack.NavWithBottomBarActivity"
+            android:exported="true"
+            android:label="@string/title_activity_nav_with_bottom_bar">
+            <!--<intent-filter>
+                                                <action android:name="android.intent.action.MAIN" />
+
+                                                <category android:name="android.intent.category.LAUNCHER" />
+                                            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".navigation.Dest7Activity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <data
+                    android:host="com.demo"
+                    android:scheme="hb" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".navigation.Dest6Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <data
+                    android:host="com.demo"
+                    android:scheme="hb" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--
+                                                <category android:name="android.intent.category.BROWSABLE" />
+                                                <category android:name="android.intent.category.APP_BROWSER" />
+                                                -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".navigation.Dest5ParamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".navigation.Dest4Activity"
+            android:exported="true" />
+        <activity
+            android:name=".navigation.NavMainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SplashScreen.Start">
+
+            <!-- 启用隐式deeplink -->
+            <nav-graph android:value="@navigation/nav_graph" />
+
+            <!--<intent-filter>
+                                                <action android:name="android.intent.action.MAIN" />
+
+                                                <category android:name="android.intent.category.LAUNCHER" />
+                                            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".splashscreen.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SplashScreen.Start">
+
+            <!--
+                                            <intent-filter>
+                                                <action android:name="android.intent.action.MAIN" />
+
+                                                <category android:name="android.intent.category.LAUNCHER" />
+                                            </intent-filter>
+                                            -->
+        </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+
+            <!-- 禁用workmanager的自动初始化 -->
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                tools:node="remove" />
+            <meta-data
+                android:name="com.example.jetpack_demos.startup.ExampleLoggerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+            <!--
+                                                <meta-data
+                                                android:name="com.example.jetpack_demos.startup.ExampleLoggerInitializer"
+                                                tools:node="remove" />
+                                            -->
+        </provider>
+
+        <activity
+            android:name=".startup.ShortcutActivity"
+            android:exported="true">
+
+            <!--
+                                              <intent-filter>
+                                                  <action android:name="android.intent.action.MAIN" />
+
+                                                  <category android:name="android.intent.category.LAUNCHER" />
+                                              </intent-filter>
+                                            -->
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity
+            android:name=".startup.CustomShortcutActivity"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- 自定义创建shortcut -->
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".room.MigrationMainActivity"
+            android:exported="true">
+
+            <!--
+                                            <intent-filter>
+                                                <action android:name="android.intent.action.MAIN" />
+
+                                                <category android:name="android.intent.category.LAUNCHER" />
+                                            </intent-filter>
+                                            -->
+        </activity>
+        <activity
+            android:name=".room.RoomAsyncMainActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".room.RoomMainActivity"
+            android:exported="true">
+
+            <!--
+                                             <intent-filter>
+                                                 <action android:name="android.intent.action.MAIN" />
+
+                                                 <category android:name="android.intent.category.LAUNCHER" />
+                                             </intent-filter>
+                                            -->
+        </activity>
+        <activity
+            android:name=".workmanager.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+
+            <!--
+                                            <intent-filter>
+                                                <action android:name="android.intent.action.MAIN" />
+
+                                                <category android:name="android.intent.category.LAUNCHER" />
+                                            </intent-filter>
+                                            -->
+        </activity> <!-- 禁用workmanager默认配置 -->
+        <!-- 声明前台服务，需要定位和麦克风 -->
+        <!--
+                                <provider
+                                            android:name="androidx.startup.InitializationProvider"
+                                            android:authorities="${applicationId}.androidx-startup"
+                                            tools:node="remove" />
+                                        -->
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:foregroundServiceType="dataSync|location|microphone"
+            tools:node="merge" />
+
+        <service
+            android:name="com.example.jetpack_demos.datastore.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":datastore" />
+    </application>
+
+</manifest>
+
+
