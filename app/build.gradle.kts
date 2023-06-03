@@ -1,7 +1,4 @@
-import com.google.protobuf.gradle.generateProtoTasks
-import com.google.protobuf.gradle.plugins
-import com.google.protobuf.gradle.protobuf
-import com.google.protobuf.gradle.protoc
+import com.google.protobuf.gradle.*
 
 plugins {
     id("com.android.application")
@@ -42,12 +39,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
         //生成字节码目标版本
-        jvmTarget = "1.8"
+        jvmTarget = "17"
         //kotlin 语言版本
         //languageVersion="1.8"
     }
@@ -70,12 +67,8 @@ ksp {
     arg("room.schemaLocation", File(rootDir, "roomSchema").absolutePath)
 }
 
-java {
-    //编译执行java项目的工具链，默认gradle也使用相同的工具链执行gradle守护进程和基于jvm的项目。
-    toolchain {
-        //java工具链版本
-        //languageVersion.set(JavaLanguageVersion.of(11))
-    }
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
@@ -163,7 +156,7 @@ protobuf {
     }
     generateProtoTasks {
         all().forEach { task ->
-            task.plugins{
+            task.builtins {
                 create("java") {
                     option("lite")
                 }
