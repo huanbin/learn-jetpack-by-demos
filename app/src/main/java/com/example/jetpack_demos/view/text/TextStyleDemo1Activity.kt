@@ -7,6 +7,7 @@ import android.text.SpannableStringBuilder
 import android.text.TextPaint
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jetpack_demos.R

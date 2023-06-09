@@ -23,3 +23,7 @@
     实际上我们的App（Apk文件）是包含多个dex文件，dalvik执行dex文件运行我们的App。而dex文件规定单个dex文件中能够引用的方法数为65536，这其中包括Android Framework methods、Library methods以及我们自己的代码中的方法数的总和。
     默认情况App打包Apk文件只包含一个dex文件，为了解决65536问题，需要在Android5.0及以上启用Multidex。
     
+    3.xml文件中@+id与@id的区别
+    @+id，@表示需要解析为资源id，+表示这是新的资源id，需要创建并添加到我们的R.java资源文件
+    @id,表示引用我们本地资源id
+    @android:id,表示引用我们Android框架的资源id（Android.R资源文件中的资源id）

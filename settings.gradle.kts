@@ -18,7 +18,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "jetpack-demos"
+rootProject.name = "LearnJetpackByDemos"
 include(":app")
 include(":demo-module-nav")
 include(":login-module-for-hilt-multimodule")
