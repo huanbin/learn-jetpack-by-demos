@@ -74,4 +74,7 @@
     <string name="done">完成</string>
     <string name="people">用户\n</string>
     <string name="span_string">Best practices for<annotation font="title_emphasis">text</annotation> on Android</string>
+    <string name="hello_fab_action">Hello</string>
+    <string name="float_fab_content_desc">float button</string>
+    <string name="please_inoput_name">please inoput name.</string>
 </resources>
